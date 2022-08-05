@@ -36,19 +36,20 @@ function onInputCountryName() {
 
 function createCountryList(arr) {
      return arr.reduce((acc, { flags, name }) => acc + 
-    `<li>
-     <img src="${flags.svg}" alt="flag" width = 50> <p>${name.official}</p>
+    `<li class="country-item">
+     <img class="img" src="${flags.svg}" alt="flag" width = 50 > 
+     <p class="country-text">${name.official}</p>
     </li>`, "");
 }
 
 function createOneCountryInfo(arr) {
     const languages = Object.values(arr[0].languages)
     return arr.reduce((acc, { flags, name, capital, population }) => acc + 
-    `<li>
-     <img src="${flags.svg}" alt="flag" width = "100px">
-     <p>${name.official}</p>
-     <p>Capital: ${capital}</p>
-     <p>Population: ${population}</p>
-     <p>Languages: ${languages}</p>
+    `<li class="one-country-item">
+     <img class="img img__center" src="${flags.svg}" alt="flag" width = "100px">
+     <p class="one-country-text one-country-text__first-element">${name.official}</p>
+     <p class="one-country-text">Capital: <span class="one-country-info">${capital}</span></p>
+     <p class="one-country-text">Population: <span class="one-country-info">${population}</span></p>
+     <p class="one-country-text">Languages: <span class="one-country-info">${languages}</span></p>
     </li>`, "")
 }
